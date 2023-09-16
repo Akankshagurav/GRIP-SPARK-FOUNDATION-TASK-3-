@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Integration</title>
+    <style>
+        /* Add some basic CSS for styling */
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Share This Content</h1>
+    <div class="social-buttons">
+        <a href="#" id="facebook-share" class="share-button">Share on Facebook</a>
+        <a href="#" id="twitter-share" class="share-button">Share on Twitter</a>
+    </div>
+
+    <script>
+        // JavaScript to handle social media sharing
+        const facebookButton = document.getElementById('facebook-share');
+        const twitterButton = document.getElementById('twitter-share');
+
+        // Replace these URLs with your actual content URLs
+        const shareUrl = 'https://example.com';
+        const shareTitle = 'Check out this awesome content!';
+        
+        // Facebook sharing
+        facebookButton.addEventListener('click', () => {
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+            window.open(facebookUrl, '_blank', 'width=600,height=400');
+        });
+
+        // Twitter sharing
+        twitterButton.addEventListener('click', () => {
+            const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTitle)}`;
+            window.open(twitterUrl, '_blank', 'width=600,height=400');
+        });
+    </script>
+</body>
+</html>
